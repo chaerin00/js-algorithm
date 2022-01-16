@@ -5,9 +5,8 @@ function solution(board, moves) {
   moves.forEach(move => {
     const index = board.findIndex(row => row[move - 1] > 0);
     if (index < 0) return;
+
     const doll = board[index][move - 1];
-    console.log(doll);
-    if (!doll) return;
 
     if ([...bucket].pop() === doll) {
       bucket.pop();
@@ -17,7 +16,6 @@ function solution(board, moves) {
     }
 
     board[index][move - 1] = 0;
-    console.log(board, board[index][move - 1]);
   });
   return answer;
 }
